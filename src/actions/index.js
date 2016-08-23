@@ -30,3 +30,11 @@ export const filter = keyWord => {
     keyWord
   }
 }
+
+export const commentImage = (id, text) => {
+  return {
+    type: 'ADD_COMMENT',
+    id,
+    text
+  }
+}

@@ -4,7 +4,8 @@ import Images from '../components/Images'
 
 const mapStateToProps = state => {
   return {
-    images: state.images
+    images: state.images,
+    comments: state.comments
   }
 }
 
