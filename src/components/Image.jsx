@@ -7,7 +7,10 @@ const Image = ({url, comments, id, addComment}) => {
     <div>
       <img src={url} />
       <br/>
-      <input type="text" name={id}
+      <input
+        type="text"
+        name={id}
+        placeholder="Enter a comment"
         onKeyUp={evt => {
           if (evt.keyCode === 13) {
             addComment(evt.target.value, evt.target.name)
