@@ -23,3 +23,10 @@ export const deleteWord = wordId => {
     id: wordId
   }
 }
+
+export const filter = keyWord => {
+  return {
+    type: 'SET_FILTER',
+    keyWord
+  }
+}

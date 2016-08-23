@@ -23,7 +23,8 @@ const words = (state = [], action) => {
 
 function findWord (arr, id) {
   return arr.findIndex(elem => {
-    return elem.id === Number(id)})
+    return elem.id === Number(id)
+  })
 }
 
 export default words
