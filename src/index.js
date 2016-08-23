@@ -6,7 +6,7 @@ import {createStore} from 'redux'
 import reducers from './reducers'
 import App from './components/App'
 
-let store = createStore(reducers)
+let store = createStore(reducers, window.devToolsExtension && window.devToolsExtension())
 
 document.addEventListener('DOMContentLoaded', () => {
   render(

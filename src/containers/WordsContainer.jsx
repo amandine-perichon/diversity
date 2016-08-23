@@ -1,13 +1,19 @@
 import {connect} from 'react-redux'
 
 import Words from '../components/Words'
+import {deleteWord} from '../actions'
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     words: state.words
   }
 }
 
-export default connect(
-  mapStateToProps
-)(Words)
+const mapDispatchToProps = dispatch => {
+  return {
+    destroy: wordId => dispatch(deleteWord(wordId))
+  }
+}
+
+export default connect(mapStateToProps,
+  mapDispatchToProps)(Words)
