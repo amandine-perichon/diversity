@@ -5,7 +5,8 @@ import {deleteWord} from '../actions'
 
 const mapStateToProps = state => {
   return {
-    words: state.words
+    words: state.words,
+    keyWord: state.keyword
   }
 }
 
