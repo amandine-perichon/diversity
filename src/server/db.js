@@ -6,6 +6,7 @@ let Company = null
 
 module.exports = {
   getAll,
+  getOne,
   connect
 }
 
@@ -33,4 +34,8 @@ function getAll () {
       }
     })
   })
+}
+
+function getOne (name) {
+  return Company.findOne({"name": name})
 }
