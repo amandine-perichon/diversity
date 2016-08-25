@@ -7,6 +7,7 @@ let Company = null
 module.exports = {
   getAll,
   getOne,
+  create,
   connect
 }
 
@@ -38,4 +39,8 @@ function getAll () {
 
 function getOne (name) {
   return Company.findOne({"name": name})
+}
+
+function create (company) {
+  return Company.insertOne(company)
 }

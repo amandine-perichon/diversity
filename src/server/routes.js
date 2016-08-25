@@ -28,5 +28,15 @@ function getCompany (req, res) {
 }
 
 function createCompany (req, res) {
-
+  var company = req.body
+  console.log(company)
+  db.create(company)
+    .then(() => {
+      console.log('OK OK')
+      res.sendStatus(200)
+    })
+    .catch((err) => {
+      console.log(err)
+      res.sendStatus(500).send(err)
+    })
 }
