@@ -9,7 +9,7 @@ import App from './components/App'
 let store = createStore(reducers, window.devToolsExtension && window.devToolsExtension())
 
 document.addEventListener('DOMContentLoaded', () => {
-  render(
+  render (
     <Provider store={store}>
       <App />
     </Provider>,

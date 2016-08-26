@@ -1,0 +1,57 @@
+var React = require('react')
+var ReactDOM = require('react-dom')
+var PieChart = require('react-d3-basic').PieChart
+
+var PieChartView = React.createClass({
+  props: {
+    data: React.PropTypes.array.isRequired
+  },
+  width: 700,
+  height: 400,
+  innerRadius: 60,
+  value (d) {
+    return +d.population
+  },
+  name (d) {
+    return d.age
+  },
+  chartSeries: [
+    {
+      "field": "<5",
+      "name": "less than 5"
+    },
+    {
+      "field": "5-13",
+      "name": "5 to 13"
+    },
+    {
+      "field": "14-17",
+      "name": "14 to 17"
+    },
+    {
+      "field": "18-24",
+      "name": "18 to 24"
+    },
+    {
+      "field": "25-44",
+      "name": "25 to 44"
+    },
+    {
+      "field": "45-64",
+      "name": "45 to 64"
+    }
+  ],
+  render: function () {
+    return <PieChart
+      data= {this.props.data}
+      width= {this.width}
+      height= {this.height}
+      chartSeries= {this.chartSeries}
+      value = {this.value}
+      name = {this.name}
+      innerRadius = {this.innerRadius}
+    />
+  }
+})
+
+module.exports = PieChartView
