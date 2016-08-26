@@ -18,9 +18,6 @@ var DiversityForm = React.createClass({
   render () {
     return (
       <div>
-        <label>Company Name</label>
-        <input name="companyName" onChange={this.changeName}/>
-        <br/>
         <label>Choose your age</label>
         <AgeInput />
         <button onClick= {this.register}> Submit</button>
