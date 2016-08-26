@@ -1,23 +1,11 @@
 import React from 'react'
+import AgeInput from './AgeInput'
 
-import AddWord from './AddWord'
-import AddImage from './AddImage'
-import AddSearch from './AddSearch'
-import WordsContainer from '../containers/WordsContainer'
-import ImagesContainer from '../containers/ImagesContainer'
-
-export default React.createClass({
-  render () {
-    return (
-      <div className='app-container'>
-        <AddSearch />
-        <br/>
-        <AddWord />
-        <WordsContainer />
-        <br/>
-        <AddImage />
-        <ImagesContainer />
-      </div>
-    )
-  }
-})
+const App = () => (
+  <div className='app-container'>
+    <br/>
+    <AgeInput />
+    <br/>
+  </div>
+)
+export default App

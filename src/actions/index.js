@@ -1,40 +1,40 @@
-let nextWordId = 0
-let nextImageId = 0
+import request from 'superagent'
 
-export const addWord = word => {
+export const addAge = age => {
   return {
-    type: 'ADD_WORD',
-    id: nextWordId++,
-    word
+    type: 'ADD_AGE',
+    age
   }
 }
-
-export const addImage = url => {
+export const sendingAges= () => {
   return {
-    type: 'ADD_IMAGE',
-    id: nextImageId++,
-    url
+    type: 'SENDING_AGES'
   }
 }
-
-export const deleteWord = wordId => {
+export const sendingError= (message) => {
   return {
-    type: 'DELETE_WORD',
-    id: wordId
+    type: 'SENDING_ERROR',
+    message
   }
 }
-
-export const filter = keyWord => {
+export const sendingSuccess =() => {
   return {
-    type: 'SET_FILTER',
-    keyWord
+    type: 'SENDING_SUCCESS'
   }
 }
+//async
+export const sendAges = ages => {
+  return (dispatch) => {
+    dispatch(sendingAges())
 
-export const commentImage = (id, text) => {
-  return {
-    type: 'ADD_COMMENT',
-    id,
-    text
+    request
+      .post('http://localhost:3000/company')
+      .send(ages)
+      .end ((err, res) => {
+        if (err) {
+          return dispatch (sendingError(err.message))
+        }
+        dispatch (sendingSuccess())
+      })
   }
 }
