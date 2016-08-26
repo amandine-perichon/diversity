@@ -1,19 +1,32 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {AgeInput} from 'AgeInput.jsx'
+import AgeInput from './AgeInput'
+import {changeCompanyName} from '../actions'
 
 
-var CompanyProfile = React.createClass({
-  render: function() {
+var DiversityForm = React.createClass({
+  changeName (evt) {
+    this.props.dispatch(changeCompanyName(evt.target.value))
+  },
+
+  register () {
+    this.props.dispatch({
+      type: 'REGISTER'
+    })
+  },
+
+  render () {
     return (
       <div>
-        <label>Enspiral</label>
-        <input name> </input>
+        <label>Company Name</label>
+        <input name="companyName" onChange={this.changeName}/>
+        <br/>
+        <label>Choose your age</label>
+        <AgeInput />
+        <button onClick= {this.register}> Submit</button>
+      </div>
+    )
+  }
+})
 
-        <label>Age results</label>
-
-        <button onClick={this.save}>Save</button>
-
-      </div> )
-      }
-      )}
+export default connect() (DiversityForm)

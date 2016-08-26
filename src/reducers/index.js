@@ -1,13 +1,10 @@
 import {combineReducers} from 'redux'
 
-import words from './words'
-import images from './images'
-import keyword from './keyword'
-import comments from './comments'
+import ageProfile from './ageProfile'
+import companyName from './companyName'
+
 
 export default combineReducers({
-  words,
-  images,
-  keyword,
-  comments
+  ageProfile,
+  companyName
 })

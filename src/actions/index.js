@@ -1,16 +1,25 @@
 import request from 'superagent'
 
-export const addAge = age => {
+export const changeAgeProfile = (age, population) => {
   return {
-    type: 'ADD_AGE',
-    age
+    type: 'CHANGE_AGE_PROFILE',
+    age,
+    population
   }
 }
-export const sendingAges= () => {
+
+export const changeCompanyName = (name) => {
   return {
-    type: 'SENDING_AGES'
+    type: 'CHANGE_NAME',
+    name
   }
 }
+
+// export const sendingAges= () => {
+//   return {
+//     type: 'SENDING_AGES'
+//   }
+// }
 export const sendingError= (message) => {
   return {
     type: 'SENDING_ERROR',
@@ -23,13 +32,11 @@ export const sendingSuccess =() => {
   }
 }
 //async
-export const sendAges = ages => {
+export const sendCompany = company => {
   return (dispatch) => {
-    dispatch(sendingAges())
-
     request
       .post('http://localhost:3000/company')
-      .send(ages)
+      .send(company)
       .end ((err, res) => {
         if (err) {
           return dispatch (sendingError(err.message))

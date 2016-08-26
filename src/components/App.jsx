@@ -1,10 +1,11 @@
 import React from 'react'
-import AgeInput from './AgeInput'
+import DiversityForm from './DiversityForm'
+
 
 const App = () => (
   <div className='app-container'>
     <br/>
-    <AgeInput />
+    <DiversityForm />
     <br/>
   </div>
 )
