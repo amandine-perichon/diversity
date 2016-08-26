@@ -17,31 +17,32 @@ var PieChartView = React.createClass({
   },
   chartSeries: [
     {
-      "field": "<5",
-      "name": "less than 5"
+      "field": "18-25",
+      "name": "18-25"
     },
     {
-      "field": "5-13",
-      "name": "5 to 13"
+      "field": "26-35",
+      "name": "26-35"
     },
     {
-      "field": "14-17",
-      "name": "14 to 17"
+      "field": "36-45",
+      "name": "36-45"
     },
     {
-      "field": "18-24",
-      "name": "18 to 24"
+      "field": "46-55",
+      "name": "46-55"
     },
     {
-      "field": "25-44",
-      "name": "25 to 44"
+      "field": "56-65",
+      "name": "56-65"
     },
     {
-      "field": "45-64",
-      "name": "45 to 64"
+      "field": "65+",
+      "name": "65+"
     }
   ],
   render: function () {
+    console.log(this.props.data)
     return <PieChart
       data= {this.props.data}
       width= {this.width}
